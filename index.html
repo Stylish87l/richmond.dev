@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Richmond Djaba — Full-Stack / Web3 / AI Developer</title>
-<meta property="og:title" content="Richmond Djaba — Full-Stack / Web3 / AI Developer">
-<meta property="og:description" content="Building at the edge of Web3, AI, and user interfaces. Check out my portfolio of shipped projects.">
+<title>Richmond Twumasi Djaba — Full Stack Software Engineer</title>
+<meta property="og:title" content="Richmond Twumasi Djaba — Full Stack Software Engineer">
+<meta property="og:description" content="Full Stack Software Engineer specializing in scalable backends, React/Next.js frontends, Web3, and AI integrations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stylish87l.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
 
   ::selection{background:var(--teal); color:#0b0e14;}
 
-  h1,h2,h3{
+  h1,h2,h3,h4{
     font-family:'Space Grotesk', sans-serif;
     font-weight:600;
     letter-spacing:-0.01em;
@@ -151,9 +151,9 @@
     50%{opacity:0.35;}
   }
   .hero h1{
-    font-size:clamp(2.2rem, 6vw, 4.4rem);
-    line-height:1.05;
-    max-width:820px;
+    font-size:clamp(2.2rem, 5.8vw, 4.2rem);
+    line-height:1.08;
+    max-width:900px;
     color:var(--text);
   }
   .hero h1 em{
@@ -162,14 +162,14 @@
   }
   .hero__sub{
     margin-top:28px;
-    max-width:560px;
+    max-width:640px;
     color:var(--muted);
     font-size:17px;
   }
   .hero__prompt{
     margin-top:40px;
     font-family:'JetBrains Mono', monospace;
-    font-size:14px;
+    font-size:13.5px;
     color:var(--neutral);
     background:var(--surface);
     border:1px solid var(--line);
@@ -178,6 +178,7 @@
     display:inline-flex;
     gap:10px;
     align-items:center;
+    flex-wrap:wrap;
   }
   .hero__prompt .prompt-tag{color:var(--amber);}
   .hero__prompt .cursor{
@@ -230,7 +231,7 @@
   }
   .section__desc{
     margin-top:16px;
-    max-width:560px;
+    max-width:580px;
     color:var(--muted);
   }
 
@@ -311,7 +312,7 @@
   }
   .project__desc{
     color:var(--muted);
-    max-width:620px;
+    max-width:640px;
     margin-bottom:22px;
   }
   .project__features{
@@ -352,6 +353,36 @@
     .project::before{display:none;}
   }
 
+  /* ---------- skills grid ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    margin-top:40px;
+  }
+  .skill-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .skill-card h4{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--teal);
+    margin-bottom:12px;
+    letter-spacing:0.04em;
+  }
+  .skill-card ul{
+    list-style:none;
+    color:var(--neutral);
+    font-size:14px;
+    line-height:1.8;
+  }
+  @media (max-width:760px){
+    .skills-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- about ---------- */
   .about{
     display:grid;
@@ -362,7 +393,7 @@
   .about__text p{
     color:var(--muted);
     margin-bottom:18px;
-    max-width:480px;
+    max-width:500px;
   }
   .about__facts{
     font-family:'JetBrains Mono', monospace;
@@ -391,7 +422,7 @@
   }
   .contact__desc{
     color:var(--muted);
-    max-width:480px;
+    max-width:500px;
     margin-top:18px;
   }
   .contact__actions{
@@ -444,6 +475,7 @@
   <a href="#top" class="nav__logo">RICHMOND<span>.</span>DEV</a>
   <div class="nav__links">
     <a href="#work">Work</a>
+    <a href="#stack">Capabilities</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
@@ -452,12 +484,12 @@
 <section class="hero" id="top">
   <canvas class="hero__canvas" id="particleCanvas" aria-hidden="true"></canvas>
   <div class="hero__content">
-    <div class="hero__eyebrow">AVAILABLE FOR WORK — WEB3 / AI / FULL-STACK</div>
-    <h1>Building at the edge of <em>Web3</em>, <em>AI</em>, and interfaces people actually enjoy using.</h1>
-    <p class="hero__sub">I'm Richmond Djaba — a full-stack developer based in Ghana. I ship smart contracts and the frontends that sit on top of them, wire AI into real products, and occasionally build things just because they're fun to make.</p>
+    <div class="hero__eyebrow">AVAILABLE FOR FULL STACK &amp; BACKEND ROLES</div>
+    <h1>Engineering <em>scalable backends</em>, production APIs, and modern web systems.</h1>
+    <p class="hero__sub">I'm Richmond Twumasi Djaba — a Full Stack Software Engineer based in Accra, Ghana. I design end-to-end architectures, robust REST/Express backends, polished Next.js/React interfaces, Web3 protocols, and AI integrations.</p>
     <div class="hero__prompt mono">
       <span class="prompt-tag">$</span>
-      <span>whoami — full-stack · solidity · react · gemini api</span>
+      <span>whoami — node.js · express · typescript · react · next.js · solidity · python</span>
       <span class="cursor"></span>
     </div>
   </div>
@@ -470,35 +502,34 @@
 <section class="section" id="work">
   <div class="wrap">
     <div class="section__head">
-      <div class="section__eyebrow"><span class="accent">05</span> SELECTED BUILDS</div>
-      <h2>Recent work</h2>
-      <p class="section__desc">A mix of shipped products, AI experiments, and things built purely to see what's possible on a Tuesday night.</p>
+      <div class="section__eyebrow"><span class="accent">06</span> PRODUCTION PROJECTS</div>
+      <h2>Featured Works</h2>
+      <p class="section__desc">Full stack applications, automated background systems, decentralized protocols, and AI services.</p>
     </div>
 
     <!-- PiggyBank -->
     <div class="project" style="--cat-color:var(--teal)">
       <div class="project__meta">
         <div class="project__id">PGY // 01</div>
-        <div class="project__category">WEB3 · SAVINGS VAULT</div>
+        <div class="project__category">WEB3 · FULL STACK DAPP</div>
         <div class="project__status">
           <span class="project__status-label">STATUS</span>
-          Live — Sepolia testnet
+          Live — Sepolia Testnet
         </div>
         <div class="project__stack">
           <span class="project__stack-label">STACK</span>
-          Next.js<br>Solidity<br>wagmi + RainbowKit<br>Tailwind CSS
+          Solidity<br>Next.js 16 + TypeScript<br>wagmi v2 + RainbowKit<br>Tailwind CSS
         </div>
       </div>
       <div class="project__body">
-        <h3>PiggyBank</h3>
-        <div class="project__tagline">Lock today. Thank yourself tomorrow.</div>
-        <p class="project__desc">A time-locked savings vault enforced entirely on-chain. Set a lock period, deposit ETH or an ERC-20 token, and the smart contract — not willpower — decides when you get it back. An emergency exit exists, but it costs a fee and a cooldown on purpose.</p>
+        <h3>PiggyBank — Time Locked Crypto Vault</h3>
+        <div class="project__tagline">Disciplined on-chain savings with automated vault rules.</div>
+        <p class="project__desc">A decentralized savings protocol featuring custom time-locked smart contracts, multi-asset support (ETH &amp; ERC-20), emergency exit mechanisms, and real-time transaction event indexing built on Next.js.</p>
         <div class="project__features">
-          <span>Time-locked vault</span>
-          <span>Multi-asset deposits</span>
-          <span>Emergency exit + cooldown</span>
-          <span>Live portfolio tracking</span>
-          <span>On-chain activity feed</span>
+          <span>Time-locked smart contract</span>
+          <span>ETH &amp; ERC-20 support</span>
+          <span>Emergency exit penalty logic</span>
+          <span>Animated wallet UI</span>
         </div>
         <div class="project__links">
           <a href="https://piggy-bank-lac.vercel.app" target="_blank" rel="noopener">Live demo →</a>
@@ -507,30 +538,60 @@
       </div>
     </div>
 
-    <!-- Crypto Hunter -->
-    <div class="project" style="--cat-color:var(--teal)">
+    <!-- Base AI Twitter Bot -->
+    <div class="project" style="--cat-color:var(--amber)">
       <div class="project__meta">
-        <div class="project__id">CRH // 02</div>
-        <div class="project__category">WEB3 · AI RESEARCH TOOL</div>
+        <div class="project__id">BOT // 02</div>
+        <div class="project__category">BACKEND · AI AUTOMATION</div>
         <div class="project__status">
           <span class="project__status-label">STATUS</span>
-          Live — multi-chain
+          Live — Autonomous
         </div>
         <div class="project__stack">
           <span class="project__stack-label">STACK</span>
-          React<br>Firebase<br>Gemini API<br>WalletConnect
+          Node.js + Express<br>Google Gemini AI<br>Twitter API v2<br>Cron Schedules
         </div>
       </div>
       <div class="project__body">
-        <h3>Crypto Hunter</h3>
-        <div class="project__tagline">AI-audited signal for a market that never sleeps.</div>
-        <p class="project__desc">A crypto research app that pairs live multi-chain market data with Gemini-powered token audits — catching honeypot patterns and rug-pull risk before a user commits capital, alongside real-time whale tracking and portfolio P&amp;L.</p>
+        <h3>Base AI Twitter Bot (Content Growth Agent)</h3>
+        <div class="project__tagline">Autonomous agent for market analysis and automated engagement.</div>
+        <p class="project__desc">An autonomous backend service engineered with Node.js that continuously monitors market feeds, analyzes context with Gemini AI, generates persona-driven posts, and handles rate limiting with memory persistence.</p>
         <div class="project__features">
-          <span>AI token audits</span>
-          <span>Whale tracking</span>
-          <span>Honeypot detection</span>
-          <span>Live portfolio P&amp;L</span>
-          <span>Solana / ETH / Base / BSC</span>
+          <span>Scheduled Cron orchestration</span>
+          <span>Rate limiting &amp; queue handling</span>
+          <span>Contextual memory systems</span>
+          <span>Twitter API v2 integration</span>
+        </div>
+        <div class="project__links">
+          <a href="https://github.com/Stylish87l" target="_blank" rel="noopener">Live dashboard →</a>
+          <a href="https://github.com/Stylish87l" target="_blank" rel="noopener" class="muted">View repository</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agent Hunter Pro -->
+    <div class="project" style="--cat-color:var(--teal)">
+      <div class="project__meta">
+        <div class="project__id">AHP // 03</div>
+        <div class="project__category">FULL STACK · AI ANALYSIS</div>
+        <div class="project__status">
+          <span class="project__status-label">STATUS</span>
+          Live — Multi-chain
+        </div>
+        <div class="project__stack">
+          <span class="project__stack-label">STACK</span>
+          React<br>Firebase Realtime DB<br>Gemini API<br>Web3 REST APIs
+        </div>
+      </div>
+      <div class="project__body">
+        <h3>Agent Hunter Pro v6.5</h3>
+        <div class="project__tagline">AI-powered multi-chain token auditing and whale tracking platform.</div>
+        <p class="project__desc">A comprehensive multi-chain web application built for automated smart contract security audits, honeypot detection, real-time whale wallet monitoring, and automated portfolio management.</p>
+        <div class="project__features">
+          <span>Honeypot risk detection</span>
+          <span>Real-time whale tracking</span>
+          <span>Firebase data store</span>
+          <span>Multi-chain RPC querying</span>
         </div>
         <div class="project__links">
           <a href="https://crypto-hunter-khaki.vercel.app" target="_blank" rel="noopener">Live demo →</a>
@@ -539,30 +600,29 @@
       </div>
     </div>
 
-    <!-- Brands-Bot -->
-    <div class="project" style="--cat-color:var(--amber)">
+    <!-- AI Ad Factory -->
+    <div class="project" style="--cat-color:var(--violet)">
       <div class="project__meta">
-        <div class="project__id">BRB // 03</div>
-        <div class="project__category">AI · CREATIVE ENGINE</div>
+        <div class="project__id">AAF // 04</div>
+        <div class="project__category">HACKATHON WINNER · AI</div>
         <div class="project__status">
           <span class="project__status-label">STATUS</span>
-          Live — AI campaign engine
+          Google Hackathon 2025
         </div>
         <div class="project__stack">
           <span class="project__stack-label">STACK</span>
-          React + TypeScript<br>Vercel Functions<br>Gemini / Imagen / Veo
+          React + TypeScript<br>Gemini API (Multimodal)<br>Veo Video Models<br>Vercel
         </div>
       </div>
       <div class="project__body">
-        <h3>Brands-Bot</h3>
-        <div class="project__tagline">One product photo in. A full ad campaign out.</div>
-        <p class="project__desc">An AI creative engine that turns a single product photo and brand guide into a complete multi-platform ad campaign — images, copy, and short video — for X, Instagram, TikTok, LinkedIn, and billboard formats.</p>
+        <h3>AI Ad Factory (Brands Bot)</h3>
+        <div class="project__tagline">Multi-platform campaign generation powered by multimodal AI.</div>
+        <p class="project__desc">Developed during the Google Nano Banana Hackathon 2025. An automated marketing platform that transforms singular product assets into targeted copy, graphics, and video campaigns across social platforms.</p>
         <div class="project__features">
-          <span>Multi-platform creatives</span>
-          <span>AI logo &amp; mascot generation</span>
-          <span>Background removal + restyle</span>
-          <span>Video ads (Veo 2.0)</span>
-          <span>A/B variant testing</span>
+          <span>Multimodal AI processing</span>
+          <span>Veo video generation pipeline</span>
+          <span>Cross-platform asset sizing</span>
+          <span>Instant copy variants</span>
         </div>
         <div class="project__links">
           <a href="https://brands-bot.vercel.app" target="_blank" rel="noopener">Live demo →</a>
@@ -571,29 +631,60 @@
       </div>
     </div>
 
+    <!-- Koyoyo College -->
+    <div class="project" style="--cat-color:var(--amber)">
+      <div class="project__meta">
+        <div class="project__id">KYC // 05</div>
+        <div class="project__category">FULL STACK · EDUCATION</div>
+        <div class="project__status">
+          <span class="project__status-label">STATUS</span>
+          Live
+        </div>
+        <div class="project__stack">
+          <span class="project__stack-label">STACK</span>
+          HTML5 / CSS3<br>Vanilla JavaScript<br>Firebase Realtime DB<br>Vercel
+        </div>
+      </div>
+      <div class="project__body">
+        <h3>Koyoyo College Africa Platform</h3>
+        <div class="project__tagline">Educational portal featuring an integrated online examination engine.</div>
+        <p class="project__desc">A responsive institutional web portal featuring a built-in online quiz and exam system with real-time scoring, student submission tracking, and Firebase database management.</p>
+        <div class="project__features">
+          <span>Online exam/quiz system</span>
+          <span>Real-time score calculation</span>
+          <span>Firebase database backend</span>
+          <span>Mobile-first layout</span>
+        </div>
+        <div class="project__links">
+          <a href="https://github.com/Stylish87l" target="_blank" rel="noopener">Live demo →</a>
+          <a href="https://github.com/Stylish87l" target="_blank" rel="noopener" class="muted">View code</a>
+        </div>
+      </div>
+    </div>
+
     <!-- African Delight -->
     <div class="project" style="--cat-color:var(--neutral)">
       <div class="project__meta">
-        <div class="project__id">AFD // 04</div>
-        <div class="project__category">CLIENT SITE</div>
+        <div class="project__id">AFD // 06</div>
+        <div class="project__category">CLIENT APPLICATION</div>
         <div class="project__status">
           <span class="project__status-label">STATUS</span>
           Shipped
         </div>
         <div class="project__stack">
           <span class="project__stack-label">STACK</span>
-          HTML5<br>Tailwind CSS (CDN)<br>Vanilla JS
+          HTML5<br>Tailwind CSS<br>Vanilla JavaScript<br>Google Maps API
         </div>
       </div>
       <div class="project__body">
-        <h3>African Delight</h3>
-        <div class="project__tagline">Six locations, one file, zero build step.</div>
-        <p class="project__desc">A responsive restaurant website with online reservations, embedded maps across six locations, and dark/light theming — built as a single dependency-free HTML file that deploys anywhere in seconds.</p>
+        <h3>African Delight Restaurant Platform</h3>
+        <div class="project__tagline">Multi-location hospitality management platform.</div>
+        <p class="project__desc">A high-performance single-page web platform featuring interactive reservation booking, dark/light theme switching, and multi-location Google Maps integration.</p>
         <div class="project__features">
-          <span>6 locations + live maps</span>
-          <span>Reservation modal</span>
-          <span>Dark / light mode</span>
-          <span>Scroll-triggered animation</span>
+          <span>Online booking modals</span>
+          <span>Google Maps integration</span>
+          <span>Zero-dependency build</span>
+          <span>Light / Dark mode</span>
         </div>
         <div class="project__links">
           <a href="https://stylish87l.github.io/African-Delight/" target="_blank" rel="noopener">Live site →</a>
@@ -602,37 +693,48 @@
       </div>
     </div>
 
-    <!-- Magic Hand Particles -->
-    <div class="project" style="--cat-color:var(--violet)">
-      <div class="project__meta">
-        <div class="project__id">MHP // 05</div>
-        <div class="project__category">EXPERIMENT · WEBCAM 3D</div>
-        <div class="project__status">
-          <span class="project__status-label">STATUS</span>
-          Prototype
-        </div>
-        <div class="project__stack">
-          <span class="project__stack-label">STACK</span>
-          Three.js<br>MediaPipe Hands<br>Firebase
-        </div>
+  </div>
+</section>
+
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="section__head">
+      <div class="section__eyebrow"><span class="accent">TECHNICAL</span> CAPABILITIES</div>
+      <h2>Skills & System Architecture</h2>
+      <p class="section__desc">Proven tools, technologies, and practices I deploy across production environments.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>LANGUAGES & BACKEND</h4>
+        <ul>
+          <li>JavaScript (ES6+) / TypeScript</li>
+          <li>Node.js / Express</li>
+          <li>Python / Solidity</li>
+          <li>Firebase / REST APIs</li>
+          <li>Cron Jobs / Automation Workflows</li>
+        </ul>
       </div>
-      <div class="project__body">
-        <h3>Magic Hand Particles</h3>
-        <div class="project__tagline">Sculpt a galaxy of particles with your bare hands.</div>
-        <p class="project__desc">A gesture-controlled particle simulation — pinch, spread, and swipe at your webcam to reshape thousands of particles in real time, with procedural shapes, neon bloom, and shareable saved presets.</p>
-        <div class="project__features">
-          <span>Real-time gesture control</span>
-          <span>Procedural particle shapes</span>
-          <span>Neon bloom effects</span>
-          <span>Cloud save &amp; share</span>
-        </div>
-        <div class="project__links">
-          <a href="https://stylish87l.github.io/magic_hand_particles/" target="_blank" rel="noopener">Live demo →</a>
-          <a href="https://github.com/Stylish87l/magic_hand_particles" target="_blank" rel="noopener" class="muted">View code</a>
-        </div>
+      <div class="skill-card">
+        <h4>FRONTEND & UI</h4>
+        <ul>
+          <li>Next.js / React</li>
+          <li>Tailwind CSS / SASS</li>
+          <li>Framer Motion / shadcn/ui</li>
+          <li>TanStack Query (React Query)</li>
+          <li>HTML5 / CSS3 / Vanilla JS</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>WEB3, AI & CLOUD</h4>
+        <ul>
+          <li>wagmi v2 / RainbowKit / WalletConnect</li>
+          <li>Google Gemini API / Prompt Engineering</li>
+          <li>Automation (n8n, Custom Agents)</li>
+          <li>Vercel / Render / Git / GitHub</li>
+          <li>Figma / UX Design Prototyping</li>
+        </ul>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -640,18 +742,18 @@
   <div class="wrap">
     <div class="section__head">
       <div class="section__eyebrow">ABOUT</div>
-      <h2>How I work</h2>
+      <h2>Background & Experience</h2>
     </div>
     <div class="about">
       <div class="about__text">
-        <p>I move between smart contracts, AI integrations, and frontend polish depending on what a project needs — most of the builds above involved writing every layer myself, from the Solidity contract to the pixel-level interaction.</p>
-        <p>I'm currently looking for roles across Web3, AI application development, and full-stack frontend — ideally somewhere I get to keep doing all three.</p>
+        <p>I am a Information Technology student at Accra Institute of Technology (AIT) and a Full Stack Software Engineer. I bridge technical execution with customer-centric problem solving, drawing from hands-on software development and technical support roles at Vodafone Ghana.</p>
+        <p>Whether building serverless REST APIs in Node.js, engineering time-locked smart contracts, or crafting animated React frontends, I focus on clean code, reliability, and user-centered design.</p>
       </div>
       <div class="about__facts mono">
-        <div class="about__fact"><span>LOCATION</span><span>Ghana</span></div>
-        <div class="about__fact"><span>FOCUS</span><span>Web3 / AI / Full-Stack</span></div>
-        <div class="about__fact"><span>STATUS</span><span>Open to work</span></div>
-        <div class="about__fact"><span>HANDLE</span><span>@Stylish87l</span></div>
+        <div class="about__fact"><span>DEGREE</span><span>B.A. Information Tech (AIT '26)</span></div>
+        <div class="about__fact"><span>LOCATION</span><span>Accra, Ghana</span></div>
+        <div class="about__fact"><span>EXPERIENCE</span><span>Freelance AI &amp; Software Dev</span></div>
+        <div class="about__fact"><span>HACKATHON</span><span>Google Nano Banana 2025</span></div>
       </div>
     </div>
   </div>
@@ -660,18 +762,18 @@
 <section class="section contact" id="contact">
   <div class="wrap">
     <div class="section__eyebrow">GET IN TOUCH</div>
-    <h2>Have a build in mind? Let's talk.</h2>
-    <p class="contact__desc">Open to Web3, AI application, and full-stack frontend roles — freelance or full-time.</p>
+    <h2>Let's build something scalable.</h2>
+    <p class="contact__desc">Available for full-time, contract, and freelance engineering roles across Full Stack, Backend, Frontend, Web3, and AI development.</p>
     <div class="contact__actions">
-      <a class="btn btn--primary" href="https://github.com/Stylish87l" target="_blank" rel="noopener">View GitHub →</a>
-      <a class="btn btn--ghost" href="https://www.linkedin.com/in/richmond-twumasi-a27956257/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn--ghost" href="mailto:richmond.djaba.dev">Email me</a>
+      <a class="btn btn--primary" href="mailto:richmond.djaba.dev@gmail.com">Email Me →</a>
+      <a class="btn btn--ghost" href="https://github.com/Stylish87l" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn--ghost" href="https://linkedin.com/in/richmond-twumasi-a27956257" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <span>© 2026 Richmond Djaba. Built from scratch, no template.</span>
+  <span>© 2026 Richmond Twumasi Djaba. All rights reserved.</span>
   <span><a href="https://github.com/Stylish87l" target="_blank" rel="noopener">github.com/Stylish87l</a></span>
 </footer>
 
@@ -682,9 +784,6 @@
     nav.classList.toggle('is-scrolled', window.scrollY > 20);
   });
 
-  // Particle hero canvas — a nod to the Magic Hand Particles project.
-  // Lightweight 2D constellation: particles drift, connect when close,
-  // and gently react to the cursor or touch.
   const canvas = document.getElementById('particleCanvas');
   const ctx = canvas.getContext('2d');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -762,7 +861,6 @@
   });
   window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
-  // Touch support for mobile devices
   window.addEventListener('touchmove', (e) => {
     if (e.touches.length > 0) {
       const rect = canvas.getBoundingClientRect();
