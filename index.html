@@ -251,11 +251,37 @@
     border-radius: 24px;
     z-index: 1;
     isolation: isolate;
+    overflow: hidden;
     text-align: left;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                background 0.5s ease,
                 border-color 0.5s ease,
                 box-shadow 0.5s ease;
+  }
+
+  /* Lightning edge — travels across the top edge on a loop, not on hover */
+  @keyframes lightning-sweep {
+    0%   { transform: translateX(-100%) skewX(-12deg); opacity: 0; }
+    8%   { opacity: 1; }
+    60%  { opacity: 0.6; }
+    100% { transform: translateX(400%) skewX(-12deg); opacity: 0; }
+  }
+  .lightning-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--cat-color, var(--teal)) 30%,
+      #ffffff 50%,
+      var(--cat-color, var(--teal)) 70%,
+      transparent 100%
+    );
+    border-radius: 9999px;
+    animation: lightning-sweep 4s ease-in-out infinite;
+    animation-delay: var(--flash-delay, 0s);
+    pointer-events: none;
+    z-index: 5;
   }
 
   /* Spotlight gradient that tracks the mouse */
@@ -266,7 +292,7 @@
     border-radius: inherit;
     background: radial-gradient(
       600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.05),
       transparent 40%
     );
     z-index: -1;
@@ -275,7 +301,7 @@
     pointer-events: none;
   }
 
-  /* Pulsating color glow behind the card */
+  /* Quiet color glow behind the card — subtle, not pulsing */
   .project::after {
     content: '';
     position: absolute;
@@ -284,18 +310,16 @@
     background: var(--cat-color, var(--teal));
     z-index: -2;
     opacity: 0;
-    filter: blur(20px);
-    transition: opacity 0.5s ease;
+    filter: blur(18px);
+    transition: opacity 0.6s ease;
     pointer-events: none;
   }
 
-  /* Striking Pop-up Hover Effect */
   .project:hover {
-    transform: translateY(-12px) scale(1.02);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   .project:hover::before {
@@ -303,12 +327,7 @@
   }
 
   .project:hover::after {
-    animation: pulsate-glow 2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
-  }
-
-  @keyframes pulsate-glow {
-    0% { opacity: 0.15; filter: blur(15px); }
-    100% { opacity: 0.45; filter: blur(30px); }
+    opacity: 0.12;
   }
 
   .project__meta{
@@ -425,15 +444,44 @@
     margin-top:40px;
   }
   .skill-card{
-    background:var(--surface);
+    position: relative;
+    background: var(--surface);
     border:1px solid var(--line);
     border-radius:var(--radius);
     padding:24px;
+    isolation: isolate;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+  }
+  .skill-card::after{
+    content:'';
+    position:absolute;
+    inset:-1px;
+    border-radius:calc(var(--radius) + 1px);
+    background: var(--cat-color, var(--teal));
+    z-index:-1;
+    opacity:0;
+    filter: blur(16px);
+    transition: opacity 0.6s ease;
+    pointer-events:none;
+  }
+  .skill-card:hover{
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--cat-color, var(--teal)) 45%, var(--line));
+    box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+  }
+  .skill-card:hover::after{
+    opacity: 0.1;
+  }
+  .skill-card .lightning-bar{
+    border-radius: 0;
   }
   .skill-card h4{
     font-family:'JetBrains Mono', monospace;
     font-size:13px;
-    color:var(--teal);
+    color:var(--cat-color, var(--teal));
     margin-bottom:12px;
     letter-spacing:0.04em;
   }
@@ -572,7 +620,8 @@
     <div class="projects-grid">
       
       <!-- PiggyBank -->
-      <div class="project" style="--cat-color:var(--teal)">
+      <div class="project" style="--cat-color:var(--teal); --flash-delay:0s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">PGY // 01</div>
           <div class="project__category">WEB3 · FULL STACK DAPP</div>
@@ -603,7 +652,8 @@
       </div>
 
       <!-- Base AI Twitter Bot -->
-      <div class="project" style="--cat-color:var(--amber)">
+      <div class="project" style="--cat-color:var(--amber); --flash-delay:0.7s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">BOT // 02</div>
           <div class="project__category">BACKEND · AI AUTOMATION</div>
@@ -634,7 +684,8 @@
       </div>
 
       <!-- Agent Hunter Pro -->
-      <div class="project" style="--cat-color:var(--teal)">
+      <div class="project" style="--cat-color:var(--teal); --flash-delay:1.4s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">AHP // 03</div>
           <div class="project__category">FULL STACK · AI ANALYSIS</div>
@@ -665,7 +716,8 @@
       </div>
 
       <!-- AI Ad Factory -->
-      <div class="project" style="--cat-color:var(--violet)">
+      <div class="project" style="--cat-color:var(--violet); --flash-delay:2.1s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">AAF // 04</div>
           <div class="project__category">HACKATHON WINNER · AI</div>
@@ -696,7 +748,8 @@
       </div>
 
       <!-- African Delight -->
-      <div class="project" style="--cat-color:var(--neutral)">
+      <div class="project" style="--cat-color:var(--neutral); --flash-delay:2.8s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">AFD // 05</div>
           <div class="project__category">CLIENT APPLICATION</div>
@@ -727,7 +780,8 @@
       </div>
 
       <!-- Magic Hand Particles -->
-      <div class="project" style="--cat-color:var(--violet)">
+      <div class="project" style="--cat-color:var(--violet); --flash-delay:3.5s">
+        <div class="lightning-bar"></div>
         <div class="project__meta">
           <div class="project__id">MHP // 06</div>
           <div class="project__category">WEB GRAPHICS · 3D</div>
@@ -769,7 +823,8 @@
       <p class="section__desc">Proven tools, technologies, and practices I deploy across production environments.</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card">
+      <div class="skill-card" style="--cat-color:var(--teal); --flash-delay:0s">
+        <div class="lightning-bar"></div>
         <h4>LANGUAGES & BACKEND</h4>
         <ul>
           <li>JavaScript (ES6+) / TypeScript</li>
@@ -779,7 +834,8 @@
           <li>Cron Jobs / Automation Workflows</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card" style="--cat-color:var(--amber); --flash-delay:1.3s">
+        <div class="lightning-bar"></div>
         <h4>FRONTEND & UI</h4>
         <ul>
           <li>Next.js / React</li>
@@ -789,7 +845,8 @@
           <li>HTML5 / CSS3 / Vanilla JS</li>
         </ul>
       </div>
-      <div class="skill-card">
+      <div class="skill-card" style="--cat-color:var(--violet); --flash-delay:2.6s">
+        <div class="lightning-bar"></div>
         <h4>WEB3, AI & CLOUD</h4>
         <ul>
           <li>wagmi v2 / RainbowKit / WalletConnect</li>
